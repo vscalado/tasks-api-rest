@@ -64,5 +64,11 @@ public class APITest {
 			.extract().path("id")
 			;
 		System.out.println(id);
+		RestAssured.given()
+		.when()
+			.delete("/todo/" + id)
+		.then()
+			.statusCode(204)
+		;
 	}
 }
